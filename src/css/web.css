@@ -1,0 +1,33 @@
+@import "./core.css";
+
+:root,
+[data-theme="phosphor"] {
+  --color-base-100: var(--rt-bg);
+  --color-base-200: var(--rt-surface);
+  --color-base-300: var(--rt-surface-inset);
+  --color-base-content: var(--rt-text);
+
+  --color-primary: var(--rt-primary);
+  --color-primary-content: #f7ffd2;
+
+  --color-secondary: var(--rt-accent);
+  --color-secondary-content: #f7ffd2;
+
+  --color-accent: var(--rt-accent-soft);
+  --color-accent-content: var(--rt-primary-strong);
+
+  --color-neutral: var(--rt-text);
+  --color-neutral-content: #eef7bf;
+
+  --color-info: var(--rt-info);
+  --color-info-content: #f5fbff;
+
+  --color-success: var(--rt-success);
+  --color-success-content: #f1ffd9;
+
+  --color-warning: var(--rt-warning);
+  --color-warning-content: #fff7dc;
+
+  --color-error: var(--rt-danger);
+  --color-error-content: #fff0ea;
+}
