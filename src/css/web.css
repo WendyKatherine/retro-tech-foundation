@@ -1,4 +1,6 @@
 @import "./core.css";
+@import "./themes/phosphor.css";
+@import "./recipes.css";
 
 :root,
 [data-theme="phosphor"] {
