@@ -1,7 +1,11 @@
 @import "./core.css";
+@import "./themes/phosphor.css";
+@import "./themes/ivory.css";
+@import "./themes/bigblue.css";
+@import "./recipes.css";
 
-:root,
-[data-theme="phosphor"] {
+[data-theme="phosphor"],
+[data-rt-theme="phosphor"] {
   --color-base-100: var(--rt-bg);
   --color-base-200: var(--rt-surface);
   --color-base-300: var(--rt-surface-inset);
@@ -30,4 +34,68 @@
 
   --color-error: var(--rt-danger);
   --color-error-content: #fff0ea;
+}
+
+[data-theme="ivory"],
+[data-rt-theme="ivory"] {
+  --color-base-100: var(--rt-bg);
+  --color-base-200: var(--rt-surface);
+  --color-base-300: var(--rt-surface-inset);
+  --color-base-content: var(--rt-text);
+
+  --color-primary: var(--rt-primary);
+  --color-primary-content: #f6f2ea;
+
+  --color-secondary: var(--rt-accent);
+  --color-secondary-content: #f6f2ea;
+
+  --color-accent: var(--rt-accent-soft);
+  --color-accent-content: var(--rt-primary-strong);
+
+  --color-neutral: var(--rt-text);
+  --color-neutral-content: #f2efe8;
+
+  --color-info: var(--rt-info);
+  --color-info-content: #f5f7fa;
+
+  --color-success: var(--rt-success);
+  --color-success-content: #eef5ef;
+
+  --color-warning: var(--rt-warning);
+  --color-warning-content: #fff7ea;
+
+  --color-error: var(--rt-danger);
+  --color-error-content: #fff1ed;
+}
+
+[data-theme="bigblue"],
+[data-rt-theme="bigblue"] {
+  --color-base-100: var(--rt-bg);
+  --color-base-200: var(--rt-surface);
+  --color-base-300: var(--rt-surface-inset);
+  --color-base-content: var(--rt-text);
+
+  --color-primary: var(--rt-primary);
+  --color-primary-content: #eef7ff;
+
+  --color-secondary: var(--rt-accent);
+  --color-secondary-content: #eef7ff;
+
+  --color-accent: var(--rt-accent-soft);
+  --color-accent-content: var(--rt-primary-strong);
+
+  --color-neutral: var(--rt-text);
+  --color-neutral-content: #eef7ff;
+
+  --color-info: var(--rt-info);
+  --color-info-content: #eef7ff;
+
+  --color-success: var(--rt-success);
+  --color-success-content: #ecfff8;
+
+  --color-warning: var(--rt-warning);
+  --color-warning-content: #fff7e8;
+
+  --color-error: var(--rt-danger);
+  --color-error-content: #fff1f1;
 }

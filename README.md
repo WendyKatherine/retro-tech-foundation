@@ -31,11 +31,13 @@ The system is intentionally designed to feel nostalgic without becoming overly d
 
 ## Current status
 
-Current version includes:
+Current version refactor V2:
 
-- initial `phosphor` theme
+- global base of the system `core.css` 
+- initial `themes/phosphor.css` theme
+- reusable parts`recipes.css` 
 - design tokens in JSON format
-- shared CSS variables
+- web assembly`web.css` 
 - platform adapters for web and Ionic
 - local playground preview for rapid visual testing
 
@@ -48,13 +50,18 @@ Current version includes:
 │   └── ui-rules.md
 ├── src/
 │   ├── assets/
-│   ├── css/
-│   │   ├── core.css
-│   │   ├── ionic.css
-│   │   └── web.css
+│   ├── css
+│   │   ├── core.css
+│   │   ├── ionic.css
+│   │   ├── recipes.css
+│   │   ├── themes
+│   │   │   ├── ivory.css
+│   │   │   └── phosphor.css
+│   │   └── web.css
 │   ├── playground/
 │   │   ├── index.html
-│   │   └── input.css
+│   │   ├── input.css
+│   │   └── output.css
 │   └── tokens/
 │       ├── colors.json
 │       ├── motion.json
