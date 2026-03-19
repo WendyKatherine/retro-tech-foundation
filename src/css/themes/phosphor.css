@@ -1,0 +1,40 @@
+:root,
+[data-rt-theme="phosphor"],
+[data-theme="phosphor"] {
+  --rt-bg: #c7d95a;
+  --rt-bg-soft: #d6e57d;
+  --rt-surface: #d0df6a;
+  --rt-surface-raised: #dbe88a;
+  --rt-surface-inset: #b6ca43;
+  --rt-border: #8fa42a;
+  --rt-border-strong: #6f8318;
+
+  --rt-text: #2e3a0f;
+  --rt-text-muted: #50611e;
+
+  --rt-primary: #4f6f13;
+  --rt-primary-strong: #33470a;
+  --rt-accent: #758d1c;
+  --rt-accent-soft: #a2ba36;
+
+  --rt-success: #3f6a1b;
+  --rt-warning: #8a6a10;
+  --rt-danger: #8a3c24;
+  --rt-info: #486a7b;
+
+  --rt-shadow: rgba(78, 96, 18, 0.18);
+  --rt-shadow-strong: rgba(54, 67, 11, 0.28);
+  --rt-white-glow: rgba(245, 255, 196, 0.42);
+
+  --rt-shadow-window:
+    0 1px 0 var(--rt-white-glow),
+    0 10px 30px var(--rt-shadow);
+
+  --rt-shadow-pressed:
+    inset 0 2px 0 rgba(72, 92, 14, 0.16),
+    inset 0 -1px 0 rgba(245, 255, 196, 0.25);
+
+  --rt-grid-pattern:
+    linear-gradient(rgba(143, 164, 42, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 164, 42, 0.14) 1px, transparent 1px);
+}
