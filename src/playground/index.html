@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-rt-theme="phosphor">
+<html lang="en" data-rt-theme="ivory">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,8 +27,12 @@
           </div>
 
           <div class="flex gap-3">
-            <button class="rt-btn rt-btn--ghost">Secondary</button>
-            <button class="rt-btn rt-btn--primary">Launch Demo</button>
+            <button class="rt-btn rt-btn--ghost" id="theme-phosphor" type="button">
+              Phosphor
+            </button>
+            <button class="rt-btn rt-btn--primary" id="theme-ivory" type="button">
+              Ivory
+            </button>
           </div>
         </div>
 
@@ -100,4 +104,18 @@
       </section>
     </main>
   </body>
+  <script>
+    const root = document.documentElement
+
+    const phosphorBtn = document.getElementById("theme-phosphor")
+    const ivoryBtn = document.getElementById("theme-ivory")
+
+    phosphorBtn?.addEventListener("click", () => {
+      root.setAttribute("data-rt-theme", "phosphor")
+    })
+
+    ivoryBtn?.addEventListener("click", () => {
+      root.setAttribute("data-rt-theme", "ivory")
+    })
+  </script>
 </html>
