@@ -104,79 +104,210 @@
             </div>
           </article>
         </div>
+
+        <section class="mt-6 rt-stack">
+          <div class="rt-toolbar">
+            <div class="rt-toolbar__group">
+              <span class="rt-toolbar__label">Mode</span>
+              <span class="rt-badge">playground</span>
+              <span class="rt-badge rt-badge--success">themeable</span>
+            </div>
+
+            <div class="rt-toolbar__group">
+              <button class="rt-btn rt-btn--ghost" type="button">Grid</button>
+              <button class="rt-btn rt-btn--ghost" type="button">Cards</button>
+              <button class="rt-btn rt-btn--primary" type="button">Preview</button>
+            </div>
+          </div>
+
+          <div class="rt-sidebar-layout">
+            <aside class="rt-stack">
+              <article class="rt-sidebar-card">
+                <span class="rt-sidebar-card__eyebrow">foundation</span>
+                <h3 class="rt-sidebar-card__title">Shared visual recipes</h3>
+                <p class="rt-sidebar-card__copy">
+                  Reusable patterns for technical demos across web and mobile flows.
+                </p>
+                <div class="rt-sidebar-card__meta">
+                  <span class="rt-badge">tokens</span>
+                  <span class="rt-badge">css vars</span>
+                  <span class="rt-badge">themes</span>
+                </div>
+              </article>
+
+              <article class="rt-stat-row">
+                <div class="rt-stat-row__item">
+                  <span class="rt-stat-row__label">Current theme</span>
+                  <span class="rt-stat-row__value" id="theme-stat">Phosphor</span>
+                </div>
+                <div class="rt-stat-row__item">
+                  <span class="rt-stat-row__label">Recipes</span>
+                  <span class="rt-stat-row__value">10+</span>
+                </div>
+                <div class="rt-stat-row__item">
+                  <span class="rt-stat-row__label">Target stacks</span>
+                  <span class="rt-stat-row__value">Next / Vue / Ionic</span>
+                </div>
+              </article>
+            </aside>
+
+            <div class="rt-stack">
+              <article class="rt-terminal">
+                <header class="rt-terminal__header">
+                  <div class="rt-window__controls">
+                    <span class="rt-dot"></span>
+                    <span class="rt-dot"></span>
+                    <span class="rt-dot"></span>
+                  </div>
+                  <h3 class="rt-terminal__title">theme-console</h3>
+                  <span class="rt-badge">runtime</span>
+                </header>
+
+                <div class="rt-terminal__body">
+                  <div class="rt-terminal__line">
+                    <span class="rt-terminal__prompt">$</span>
+                    <span>theme apply --name=<span id="theme-command">phosphor</span></span>
+                  </div>
+                  <div class="rt-terminal__line">
+                    <span class="rt-terminal__prompt">></span>
+                    <span class="rt-terminal__muted">loading tokens, recipes, and semantic color mappings...</span>
+                  </div>
+                  <div class="rt-terminal__line">
+                    <span class="rt-terminal__prompt">></span>
+                    <span>playground ready</span>
+                  </div>
+                </div>
+              </article>
+
+              <div class="rt-mobile-grid">
+                <article class="rt-mobile-tile">
+                  <div class="rt-mobile-tile__top">
+                    <div class="rt-mobile-tile__icon">⌘</div>
+                    <span class="rt-badge">mobile</span>
+                  </div>
+                  <div>
+                    <h4 class="rt-mobile-tile__title">Navigation flow</h4>
+                    <p class="rt-mobile-tile__copy">
+                      Reusable tile for route previews, transitions, and contextual actions.
+                    </p>
+                  </div>
+                  <div class="rt-mobile-tile__footer">
+                    <span class="rt-badge rt-badge--success">active</span>
+                    <button class="rt-btn rt-btn--ghost" type="button">Open</button>
+                  </div>
+                </article>
+
+                <article class="rt-mobile-tile">
+                  <div class="rt-mobile-tile__top">
+                    <div class="rt-mobile-tile__icon">#</div>
+                    <span class="rt-badge">system</span>
+                  </div>
+                  <div>
+                    <h4 class="rt-mobile-tile__title">Location state</h4>
+                    <p class="rt-mobile-tile__copy">
+                      Compact card for geolocation, permissions, or device-aware UI status.
+                    </p>
+                  </div>
+                  <div class="rt-mobile-tile__footer">
+                    <span class="rt-badge rt-badge--warning">pending</span>
+                    <button class="rt-btn rt-btn--ghost" type="button">Inspect</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
-  </body>
-  <script>
-    const root = document.documentElement
 
-    const phosphorBtn = document.getElementById("theme-phosphor")
-    const ivoryBtn = document.getElementById("theme-ivory")
-    const bigblueBtn = document.getElementById("theme-bigblue")
+    <script>
+      const root = document.documentElement
 
-    const titleEl = document.getElementById("theme-title")
-    const descriptionEl = document.getElementById("theme-description")
+      const phosphorBtn = document.getElementById("theme-phosphor")
+      const ivoryBtn = document.getElementById("theme-ivory")
+      const bigblueBtn = document.getElementById("theme-bigblue")
 
-    const themes = {
-      phosphor: {
-        label: "Phosphor Theme",
-        description:
-          "Classic Macintosh mood, pixel nostalgia, soft phosphor screen, and a cleaner modern shell.",
-      },
-      ivory: {
-        label: "Ivory Theme",
-        description:
-          "A more serious Macintosh-inspired palette with paper tones, quiet contrast, and a cleaner product UI feel.",
-      },
-      bigblue: {
-        label: "Big Blue Theme",
-        description:
-          "A bold retro-system blue with stronger contrast, polished surfaces, and a more energetic technical mood.",
-      },
-    }
+      const titleEl = document.getElementById("theme-title")
+      const descriptionEl = document.getElementById("theme-description")
+      const themeStatEl = document.getElementById("theme-stat")
+      const themeCommandEl = document.getElementById("theme-command")
 
-    const buttons = {
-      phosphor: phosphorBtn,
-      ivory: ivoryBtn,
-      bigblue: bigblueBtn,
-    }
+      const themes = {
+        phosphor: {
+          label: "Phosphor Theme",
+          short: "Phosphor",
+          description:
+            "Classic Macintosh mood, pixel nostalgia, soft phosphor screen, and a cleaner modern shell.",
+        },
+        ivory: {
+          label: "Ivory Theme",
+          short: "Ivory",
+          description:
+            "A more serious Macintosh-inspired palette with paper tones, quiet contrast, and a cleaner product UI feel.",
+        },
+        bigblue: {
+          label: "Big Blue Theme",
+          short: "Big blue",
+          description:
+            "A bold retro-system blue with stronger contrast, polished surfaces, and a more energetic technical mood.",
+        },
+      }
 
-    function updateActiveButton(theme) {
-      Object.entries(buttons).forEach(([key, button]) => {
-        if (!button) return
+      const buttons = {
+        phosphor: phosphorBtn,
+        ivory: ivoryBtn,
+        bigblue: bigblueBtn,
+      }
 
-        if (key === theme) {
-          button.classList.remove("rt-btn--ghost")
-          button.classList.add("rt-btn--primary")
-        } else {
-          button.classList.remove("rt-btn--primary")
-          button.classList.add("rt-btn--ghost")
+      function updateActiveButton(theme) {
+        Object.entries(buttons).forEach(([key, button]) => {
+          if (!button) return
+
+          if (key === theme) {
+            button.classList.remove("rt-btn--ghost")
+            button.classList.add("rt-btn--primary")
+          } else {
+            button.classList.remove("rt-btn--primary")
+            button.classList.add("rt-btn--ghost")
+          }
+        })
+      }
+
+      function applyTheme(theme) {
+        const selectedTheme = themes[theme] ? theme : "phosphor"
+
+        root.setAttribute("data-rt-theme", selectedTheme)
+        localStorage.setItem("rt-theme", selectedTheme)
+
+        if (titleEl) {
+          titleEl.textContent = themes[selectedTheme].label
         }
-      })
-    }
 
-    function applyTheme(theme) {
-      const selectedTheme = themes[theme] ? theme : "phosphor"
+        if (descriptionEl) {
+          descriptionEl.textContent = themes[selectedTheme].description
+        }
 
-      root.setAttribute("data-rt-theme", selectedTheme)
-      localStorage.setItem("rt-theme", selectedTheme)
+        if (themeStatEl) {
+          themeStatEl.textContent = themes[selectedTheme].short
+        }
 
-      if (titleEl) {
-        titleEl.textContent = themes[selectedTheme].label
+        if (themeCommandEl) {
+          themeCommandEl.textContent = selectedTheme
+        }
+
+        updateActiveButton(selectedTheme)
       }
 
-      if (descriptionEl) {
-        descriptionEl.textContent = themes[selectedTheme].description
-      }
+      phosphorBtn?.addEventListener("click", () => applyTheme("phosphor"))
+      ivoryBtn?.addEventListener("click", () => applyTheme("ivory"))
+      bigblueBtn?.addEventListener("click", () => applyTheme("bigblue"))
 
-      updateActiveButton(selectedTheme)
-    }
+      const savedTheme =
+        localStorage.getItem("rt-theme") ||
+        root.getAttribute("data-rt-theme") ||
+        "phosphor"
 
-    phosphorBtn?.addEventListener("click", () => applyTheme("phosphor"))
-    ivoryBtn?.addEventListener("click", () => applyTheme("ivory"))
-    bigblueBtn?.addEventListener("click", () => applyTheme("bigblue"))
-
-    const savedTheme = localStorage.getItem("rt-theme") || root.getAttribute("data-rt-theme") || "phosphor"
-    applyTheme(savedTheme)
-  </script>
+      applyTheme(savedTheme)
+    </script>
+  </body>
 </html>
