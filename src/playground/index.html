@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-rt-theme="ivory">
+<html lang="en" data-rt-theme="bigblue">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,10 +18,10 @@
         <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
           <div>
             <p class="rt-badge">shared visual foundation</p>
-            <h1 class="mt-3 text-4xl font-semibold tracking-tight text-[var(--rt-text)]">
+            <h1 id="theme-title" class="mt-3 text-4xl font-semibold tracking-tight text-[var(--rt-text)]">
               Phosphor Theme
             </h1>
-            <p class="mt-2 max-w-2xl text-sm text-[var(--rt-text-muted)]">
+            <p id="theme-description" class="mt-2 max-w-2xl text-sm text-[var(--rt-text-muted)]">
               Classic Macintosh mood, pixel nostalgia, soft phosphor screen, and a cleaner modern shell.
             </p>
           </div>
@@ -30,8 +30,11 @@
             <button class="rt-btn rt-btn--ghost" id="theme-phosphor" type="button">
               Phosphor
             </button>
-            <button class="rt-btn rt-btn--primary" id="theme-ivory" type="button">
+            <button class="rt-btn rt-btn--ghost" id="theme-ivory" type="button">
               Ivory
+            </button>
+            <button class="rt-btn rt-btn--ghost" id="theme-bigblue" type="button">
+              Big blue
             </button>
           </div>
         </div>
@@ -109,13 +112,71 @@
 
     const phosphorBtn = document.getElementById("theme-phosphor")
     const ivoryBtn = document.getElementById("theme-ivory")
+    const bigblueBtn = document.getElementById("theme-bigblue")
 
-    phosphorBtn?.addEventListener("click", () => {
-      root.setAttribute("data-rt-theme", "phosphor")
-    })
+    const titleEl = document.getElementById("theme-title")
+    const descriptionEl = document.getElementById("theme-description")
 
-    ivoryBtn?.addEventListener("click", () => {
-      root.setAttribute("data-rt-theme", "ivory")
-    })
+    const themes = {
+      phosphor: {
+        label: "Phosphor Theme",
+        description:
+          "Classic Macintosh mood, pixel nostalgia, soft phosphor screen, and a cleaner modern shell.",
+      },
+      ivory: {
+        label: "Ivory Theme",
+        description:
+          "A more serious Macintosh-inspired palette with paper tones, quiet contrast, and a cleaner product UI feel.",
+      },
+      bigblue: {
+        label: "Big Blue Theme",
+        description:
+          "A bold retro-system blue with stronger contrast, polished surfaces, and a more energetic technical mood.",
+      },
+    }
+
+    const buttons = {
+      phosphor: phosphorBtn,
+      ivory: ivoryBtn,
+      bigblue: bigblueBtn,
+    }
+
+    function updateActiveButton(theme) {
+      Object.entries(buttons).forEach(([key, button]) => {
+        if (!button) return
+
+        if (key === theme) {
+          button.classList.remove("rt-btn--ghost")
+          button.classList.add("rt-btn--primary")
+        } else {
+          button.classList.remove("rt-btn--primary")
+          button.classList.add("rt-btn--ghost")
+        }
+      })
+    }
+
+    function applyTheme(theme) {
+      const selectedTheme = themes[theme] ? theme : "phosphor"
+
+      root.setAttribute("data-rt-theme", selectedTheme)
+      localStorage.setItem("rt-theme", selectedTheme)
+
+      if (titleEl) {
+        titleEl.textContent = themes[selectedTheme].label
+      }
+
+      if (descriptionEl) {
+        descriptionEl.textContent = themes[selectedTheme].description
+      }
+
+      updateActiveButton(selectedTheme)
+    }
+
+    phosphorBtn?.addEventListener("click", () => applyTheme("phosphor"))
+    ivoryBtn?.addEventListener("click", () => applyTheme("ivory"))
+    bigblueBtn?.addEventListener("click", () => applyTheme("bigblue"))
+
+    const savedTheme = localStorage.getItem("rt-theme") || root.getAttribute("data-rt-theme") || "phosphor"
+    applyTheme(savedTheme)
   </script>
 </html>
