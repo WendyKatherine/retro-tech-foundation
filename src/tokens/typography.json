@@ -1,0 +1,13 @@
+{
+  "fontSans": "\"Inter\", \"Segoe UI\", sans-serif",
+  "fontDisplay": "\"VT323\", \"Courier New\", monospace",
+  "fontMono": "\"JetBrains Mono\", \"Courier New\", monospace",
+  "text-xs": "12px",
+  "text-sm": "14px",
+  "text-base": "16px",
+  "text-lg": "20px",
+  "text-xl": "24px",
+  "text-2xl": "32px",
+  "line-tight": "1.1",
+  "line-base": "1.5"
+}

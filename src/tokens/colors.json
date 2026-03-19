@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "name": "retro-tech-foundation",
+    "version": "0.1.0"
+  },
+  "themes": {
+    "phosphor": {
+      "bg": "#c7d95a",
+      "bgSoft": "#d6e57d",
+      "surface": "#d0df6a",
+      "surfaceRaised": "#dbe88a",
+      "surfaceInset": "#b6ca43",
+      "border": "#8fa42a",
+      "borderStrong": "#6f8318",
+      "text": "#2e3a0f",
+      "textMuted": "#50611e",
+      "primary": "#4f6f13",
+      "primaryStrong": "#33470a",
+      "accent": "#758d1c",
+      "accentSoft": "#a2ba36",
+      "success": "#3f6a1b",
+      "warning": "#8a6a10",
+      "danger": "#8a3c24",
+      "info": "#486a7b",
+      "shadow": "rgba(78, 96, 18, 0.18)",
+      "shadowStrong": "rgba(54, 67, 11, 0.28)",
+      "whiteGlow": "rgba(245, 255, 196, 0.42)"
+    }
+  }
+}
