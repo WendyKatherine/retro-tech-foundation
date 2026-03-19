@@ -1,9 +1,37 @@
 @import "./core.css";
 @import "./themes/phosphor.css";
+@import "./themes/bigblue.css";
+@import "./themes/ivory.css";
 @import "./recipes.css";
 
 :root,
 [data-rt-theme="phosphor"] {
+  --ion-background-color: var(--rt-bg);
+  --ion-text-color: var(--rt-text);
+  --ion-border-color: var(--rt-border);
+
+  --ion-color-primary: var(--rt-primary);
+  --ion-color-secondary: var(--rt-accent);
+  --ion-color-success: var(--rt-success);
+  --ion-color-warning: var(--rt-warning);
+  --ion-color-danger: var(--rt-danger);
+}
+
+[data-theme="ivory"],
+[data-rt-theme="ivory"] {
+  --ion-background-color: var(--rt-bg);
+  --ion-text-color: var(--rt-text);
+  --ion-border-color: var(--rt-border);
+
+  --ion-color-primary: var(--rt-primary);
+  --ion-color-secondary: var(--rt-accent);
+  --ion-color-success: var(--rt-success);
+  --ion-color-warning: var(--rt-warning);
+  --ion-color-danger: var(--rt-danger);
+}
+
+[data-theme="bigblue"],
+[data-rt-theme="bigblue"] {
   --ion-background-color: var(--rt-bg);
   --ion-text-color: var(--rt-text);
   --ion-border-color: var(--rt-border);

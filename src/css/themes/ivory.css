@@ -50,4 +50,6 @@
   --rt-tint-mid: rgba(177, 186, 164, 0.34);
   --rt-tint-strong: rgba(138, 147, 128, 0.18);
   --rt-tint-titlebar: rgba(95, 116, 136, 0.08);
+
+  --rt-focus-ring: rgba(95, 116, 136, 0.18);
 }
