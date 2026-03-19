@@ -6,7 +6,7 @@
   --rt-surface-raised: #7bbcf3;
   --rt-surface-inset: #3f92db;
 
-  --rt-border: #1d6fbe;
+  --rt-border: #3f92db;
   --rt-border-strong: #14579a;
 
   --rt-text: #0d2f52;
@@ -52,4 +52,12 @@
   --rt-tint-titlebar: rgba(15, 102, 184, 0.08);
 
   --rt-focus-ring: rgba(15, 102, 184, 0.22);
+
+  --rt-glass-bg: rgba(255, 255, 255, 0.12);
+  --rt-glass-border: rgba(255, 255, 255, 0.34);
+  --rt-glass-border-soft: rgba(255, 255, 255, 0.18);
+  --rt-glass-highlight: rgba(255, 255, 255, 0.65);
+  --rt-glass-highlight-soft: rgba(255, 255, 255, 0.18);
+  --rt-glass-shadow: rgba(0, 0, 0, 0.18);
+  --rt-glass-shadow-strong: rgba(0, 0, 0, 0.12);
 }

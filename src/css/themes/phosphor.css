@@ -51,4 +51,12 @@
   --rt-tint-titlebar: rgba(143, 164, 42, 0.08);
 
   --rt-focus-ring: rgba(162, 186, 54, 0.18);
+
+--rt-glass-bg: rgba(255, 255, 255, 0.08);
+--rt-glass-border: rgba(255, 255, 255, 0.28);
+--rt-glass-border-soft: rgba(255, 255, 255, 0.16);
+--rt-glass-highlight: rgba(255, 255, 255, 0.55);
+--rt-glass-highlight-soft: rgba(255, 255, 255, 0.14);
+--rt-glass-shadow: rgba(0, 0, 0, 0.14);
+--rt-glass-shadow-strong: rgba(0, 0, 0, 0.10);
 }
