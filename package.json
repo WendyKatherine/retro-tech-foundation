@@ -1,0 +1,33 @@
+{
+  "name": "@wendy/retro-tech-foundation",
+  "version": "0.1.0",
+  "description": "Shared retro-tech visual foundation for portfolio demos",
+  "license": "MIT",
+  "files": [
+    "src/css",
+    "src/tokens",
+    "src/assets",
+    "docs"
+  ],
+  "exports": {
+    "./css/core.css": "./src/css/core.css",
+    "./css/web.css": "./src/css/web.css",
+    "./css/ionic.css": "./src/css/ionic.css",
+    "./tokens/colors.json": "./src/tokens/colors.json",
+    "./tokens/spacing.json": "./src/tokens/spacing.json",
+    "./tokens/radius.json": "./src/tokens/radius.json",
+    "./tokens/typography.json": "./src/tokens/typography.json",
+    "./tokens/motion.json": "./src/tokens/motion.json"
+  },
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/playground/input.css -o ./src/playground/output.css --watch",
+    "build:playground": "npx @tailwindcss/cli -i ./src/playground/input.css -o ./src/playground/output.css",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "*",
+    "@tailwindcss/oxide-darwin-arm64": "^4.2.2",
+    "prettier": "*",
+    "tailwindcss": "*"
+  }
+}
