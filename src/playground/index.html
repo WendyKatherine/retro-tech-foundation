@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-theme="phosphor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Tech Foundation</title>
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="rt-app-shell">
+      <section class="mx-auto max-w-6xl">
+        <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p class="rt-badge">shared visual foundation</p>
+            <h1 class="mt-3 text-4xl font-semibold tracking-tight text-[var(--rt-text)]">
+              Phosphor Theme
+            </h1>
+            <p class="mt-2 max-w-2xl text-sm text-[var(--rt-text-muted)]">
+              Classic Macintosh mood, pixel nostalgia, soft phosphor screen, and a cleaner modern shell.
+            </p>
+          </div>
+
+          <div class="flex gap-3">
+            <button class="rt-btn rt-btn--ghost">Secondary</button>
+            <button class="rt-btn rt-btn--primary">Launch Demo</button>
+          </div>
+        </div>
+
+        <div class="rt-grid-2">
+          <article class="rt-window rt-pixel-card">
+            <header class="rt-window__titlebar">
+              <div class="rt-window__controls">
+                <span class="rt-dot"></span>
+                <span class="rt-dot"></span>
+                <span class="rt-dot"></span>
+              </div>
+              <h2 class="rt-window__title">pricing / geolocation</h2>
+              <span class="rt-badge rt-badge--success">stable</span>
+            </header>
+
+            <div class="rt-window__body rt-stack">
+              <div class="rt-panel">
+                <p class="rt-title">Routing logic</p>
+                <p class="rt-copy">
+                  Shared tokens, semantic colors, framed surfaces, and soft grid backgrounds.
+                </p>
+              </div>
+
+              <div class="rt-grid-2">
+                <div class="rt-panel rt-panel--inset rt-kpi">
+                  <span class="rt-kpi__label">active region</span>
+                  <strong class="rt-kpi__value">US / CA</strong>
+                </div>
+                <div class="rt-panel rt-panel--inset rt-kpi">
+                  <span class="rt-kpi__label">price mode</span>
+                  <strong class="rt-kpi__value">QUOTE</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="rt-window">
+            <header class="rt-window__titlebar">
+              <div class="rt-window__controls">
+                <span class="rt-dot"></span>
+                <span class="rt-dot"></span>
+                <span class="rt-dot"></span>
+              </div>
+              <h2 class="rt-window__title">ui recipes</h2>
+              <span class="rt-badge">preview</span>
+            </header>
+
+            <div class="rt-window__body rt-stack">
+              <div class="rt-panel">
+                <label class="mb-2 block text-sm font-medium">Search route</label>
+                <input class="rt-input" placeholder="Try mobile navigation flow" />
+              </div>
+
+              <div class="flex flex-wrap gap-3">
+                <span class="rt-badge">pixel shell</span>
+                <span class="rt-badge rt-badge--success">soft glow</span>
+                <span class="rt-badge rt-badge--warning">mono theme</span>
+              </div>
+
+              <div class="rt-panel">
+                <p class="rt-copy">
+                  This first theme is intentionally monochrome-green. Later we add ivory, graphite,
+                  amber, and blue variants without changing the structure.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
