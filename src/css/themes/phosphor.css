@@ -59,4 +59,9 @@
 --rt-glass-highlight-soft: rgba(255, 255, 255, 0.14);
 --rt-glass-shadow: rgba(0, 0, 0, 0.14);
 --rt-glass-shadow-strong: rgba(0, 0, 0, 0.10);
+
+--rt-icon-decor: #6f8318;
+--rt-icon-opacity: 0.18;
+--rt-icon-blur: 0px;
+--rt-scene-opacity: 0.16;
 }

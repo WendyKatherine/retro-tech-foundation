@@ -1,24 +1,18 @@
 .rt-app-shell {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: 100vh;
   padding: var(--rt-space-6);
   background:
-    radial-gradient(
-      circle at 18% 12%,
-      color-mix(in srgb, var(--rt-glass-highlight) 35%, transparent),
-      transparent 26%
-    ),
-    radial-gradient(
-      circle at 82% 8%,
-      color-mix(in srgb, var(--rt-accent-soft) 22%, transparent),
-      transparent 22%
-    ),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--rt-bg-soft) 88%, white 4%),
-      var(--rt-bg)
-    ),
+    linear-gradient(180deg, color-mix(in srgb, var(--rt-bg-soft) 88%, white 4%), var(--rt-bg)),
     var(--rt-grid-pattern);
-  background-size: auto, auto, auto, 32px 32px;
+  background-size: auto, 32px 32px;
+}
+
+.rt-app-shell > * {
+  position: relative;
+  z-index: 1;
 }
 
 .rt-stack {
@@ -94,8 +88,8 @@
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--rt-surface-raised) 92%, white 6%),
-      color-mix(in srgb, var(--rt-surface) 96%, transparent)
+      color-mix(in srgb, var(--rt-surface-raised) 2%, white 6%),
+      color-mix(in srgb, var(--rt-surface) 4%, transparent)
     );
   box-shadow:
     0 14px 32px color-mix(in srgb, var(--rt-shadow) 72%, transparent),
@@ -396,7 +390,7 @@
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--rt-glass-highlight) 14%, transparent),
+      color-mix(in srgb, var(--rt-glass-highlight) 2%, transparent),
       color-mix(in srgb, var(--rt-glass-bg) 88%, transparent)
     );
   backdrop-filter: blur(16px);
@@ -549,7 +543,7 @@
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--rt-glass-highlight) 14%, transparent),
+      color-mix(in srgb, var(--rt-glass-highlight) 2%, transparent),
       color-mix(in srgb, var(--rt-glass-bg) 90%, transparent)
     );
   backdrop-filter: blur(20px);
@@ -601,6 +595,57 @@
   border-top: 1px dashed var(--rt-line-mid);
 }
 
+.rt-app-shell::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--rt-scene-opacity, 0.16);
+  background:
+    url("../assets/icons/bug.svg") 6% 10% / 400px no-repeat,
+    url("../assets/icons/cpu.svg") 38% 4% / 400px no-repeat,
+    url("../assets/icons/chat-bubble.svg") 74% 10% / 400px no-repeat,
+    url("../assets/icons/cat.svg") 10% 46% / 400px no-repeat,
+    url("../assets/icons/robot.svg") 48% 50% / 400px no-repeat,
+    url("../assets/icons/checker-block.svg") 84% 48% / 400px no-repeat,
+    url("../assets/icons/cursor.svg") 38% 86% / 400px no-repeat;
+  transform: rotate(-45deg) translate3d(0, 0, 0) scale(1.12);
+  transform-origin: center;
+  animation: rt-scene-float 22s ease-in-out infinite alternate;
+}
+
+@keyframes rt-scene-float {
+  0% {
+    transform: rotate(-45deg) translate3d(0px, 0px, 0) scale(1.12);
+  }
+  25% {
+    transform: rotate(-45deg) translate3d(3px, -4px, 0) scale(1.125);
+  }
+  50% {
+    transform: rotate(-45deg) translate3d(-2px, 3px, 0) scale(1.118);
+  }
+  75% {
+    transform: rotate(-45deg) translate3d(4px, 1px, 0) scale(1.124);
+  }
+  100% {
+    transform: rotate(-45deg) translate3d(-3px, -2px, 0) scale(1.12);
+  }
+}
+
+.rt-app-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    radial-gradient(circle at 18% 12%, color-mix(in srgb, var(--rt-accent-soft) 26%, transparent), transparent 22%),
+    radial-gradient(circle at 82% 8%, color-mix(in srgb, var(--rt-white-glow) 22%, transparent), transparent 20%);
+  filter: blur(12px);
+}
+
 @media (min-width: 640px) {
   .rt-mobile-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -616,5 +661,11 @@
 @media (min-width: 1024px) {
   .rt-sidebar-layout {
     grid-template-columns: 280px minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rt-app-shell::before {
+    animation: none;
   }
 }
