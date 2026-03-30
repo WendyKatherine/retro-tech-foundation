@@ -1,8 +1,11 @@
 {
   "name": "@wendy/retro-tech-foundation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared retro-tech visual foundation for portfolio demos",
   "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
   "files": [
     "src/css",
     "src/tokens",
@@ -10,9 +13,34 @@
     "docs"
   ],
   "exports": {
-    "./css/core.css": "./src/css/core.css",
-    "./css/web.css": "./src/css/web.css",
-    "./css/ionic.css": "./src/css/ionic.css",
+    "./css/core.css": {
+      "style": "./src/css/core.css",
+      "default": "./src/css/core.css"
+    },
+    "./css/web.css": {
+      "style": "./src/css/web.css",
+      "default": "./src/css/web.css"
+    },
+    "./css/ionic.css": {
+      "style": "./src/css/ionic.css",
+      "default": "./src/css/ionic.css"
+    },
+    "./css/recipes.css": {
+      "style": "./src/css/recipes.css",
+      "default": "./src/css/recipes.css"
+    },
+    "./css/themes/phosphor.css": {
+      "style": "./src/css/themes/phosphor.css",
+      "default": "./src/css/themes/phosphor.css"
+    },
+    "./css/themes/ivory.css": {
+      "style": "./src/css/themes/ivory.css",
+      "default": "./src/css/themes/ivory.css"
+    },
+    "./css/themes/bigblue.css": {
+      "style": "./src/css/themes/bigblue.css",
+      "default": "./src/css/themes/bigblue.css"
+    },
     "./tokens/colors.json": "./src/tokens/colors.json",
     "./tokens/spacing.json": "./src/tokens/spacing.json",
     "./tokens/radius.json": "./src/tokens/radius.json",
