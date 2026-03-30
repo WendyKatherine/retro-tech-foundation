@@ -42,7 +42,6 @@
   background: var(--rt-glass-bg);
   border: 1px solid var(--rt-glass-border);
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   box-shadow:
     0 8px 32px var(--rt-glass-shadow),
     inset 0 1px 0 var(--rt-glass-highlight),
@@ -84,18 +83,17 @@
   position: relative;
   overflow: hidden;
   border-radius: var(--rt-radius-xl);
-  border: 1px solid color-mix(in srgb, var(--rt-border) 45%, white 18%);
+  border: 1px solid var(--rt-glass-border);
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--rt-surface-raised) 2%, white 6%),
-      color-mix(in srgb, var(--rt-surface) 4%, transparent)
+      color-mix(in srgb, var(--rt-glass-highlight) 12%, transparent),
+      var(--rt-glass-bg)
     );
   box-shadow:
     0 14px 32px color-mix(in srgb, var(--rt-shadow) 72%, transparent),
-    inset 0 1px 0 color-mix(in srgb, var(--rt-white-glow) 85%, white 10%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+    inset 0 1px 0 var(--rt-glass-highlight);
+  backdrop-filter: blur(16px);
 }
 
 .rt-window::before {
@@ -137,11 +135,11 @@
   justify-content: space-between;
   gap: var(--rt-space-3);
   padding: var(--rt-space-3) var(--rt-space-4);
-  border-bottom: 1px solid color-mix(in srgb, var(--rt-border) 28%, white 16%);
+  border-bottom: 1px solid var(--rt-glass-border-soft);
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--rt-white-glow) 55%, white 10%),
+      color-mix(in srgb, var(--rt-glass-highlight) 55%, white 10%),
       color-mix(in srgb, var(--rt-surface-raised) 86%, transparent)
     ),
     repeating-linear-gradient(
@@ -157,6 +155,7 @@
   font-size: var(--rt-text-xl);
   line-height: var(--rt-line-tight);
   letter-spacing: 0.03em;
+  color: var(--rt-text);
 }
 
 .rt-window__controls {
@@ -196,7 +195,6 @@
     inset 0 1px 0 var(--rt-glass-highlight-soft),
     0 8px 20px var(--rt-glass-shadow-strong);
   backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
 }
 
 .rt-title {
@@ -279,7 +277,6 @@
   font: inherit;
   outline: none;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   transition:
     border-color var(--rt-duration-fast) var(--rt-ease-standard),
     box-shadow var(--rt-duration-fast) var(--rt-ease-standard);
@@ -305,7 +302,6 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 .rt-kpi {
@@ -324,6 +320,7 @@
   font-family: var(--rt-font-display);
   font-size: var(--rt-text-2xl);
   line-height: 1;
+  letter-spacing: 1px;
 }
 
 .rt-pixel-card {
@@ -358,7 +355,6 @@
   border-radius: var(--rt-radius-lg);
   background: var(--rt-glass-bg);
   backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   box-shadow:
     0 8px 24px var(--rt-glass-shadow-strong),
     inset 0 1px 0 var(--rt-glass-highlight),
@@ -394,7 +390,6 @@
       color-mix(in srgb, var(--rt-glass-bg) 88%, transparent)
     );
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   box-shadow:
     0 8px 24px var(--rt-glass-shadow-strong),
     inset 0 1px 0 var(--rt-glass-highlight),
@@ -441,7 +436,6 @@
       color-mix(in srgb, var(--rt-surface-inset) 82%, black 18%)
     );
   backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   box-shadow:
     0 10px 28px var(--rt-glass-shadow),
     inset 0 1px 0 var(--rt-glass-highlight-soft);
@@ -452,6 +446,7 @@
   font-family: var(--rt-font-display);
   font-size: var(--rt-text-lg);
   line-height: var(--rt-line-tight);
+  color: var(--rt-text);
 }
 
 .rt-terminal__body {
@@ -459,7 +454,7 @@
   font-family: var(--rt-font-mono);
   font-size: var(--rt-text-sm);
   line-height: 1.7;
-  color: color-mix(in srgb, var(--rt-text) 82%, white 18%);
+  color: color-mix(in srgb, var(--rt-text) 95%, white 5%);
   background:
     linear-gradient(
       180deg,
@@ -497,7 +492,6 @@
       color-mix(in srgb, var(--rt-glass-bg) 88%, transparent)
     );
   backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   box-shadow:
     0 10px 24px var(--rt-glass-shadow-strong),
     inset 0 1px 0 var(--rt-glass-highlight),
@@ -547,7 +541,6 @@
       color-mix(in srgb, var(--rt-glass-bg) 90%, transparent)
     );
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   box-shadow:
     0 10px 28px var(--rt-glass-shadow-strong),
     inset 0 1px 0 var(--rt-glass-highlight),
